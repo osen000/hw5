@@ -1,0 +1,57 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+
+
+def test_user_registration(driver):
+    """Поиск элементов"""
+    driver.get(driver.base_url + f"index.php?route=account/register")
+    wait = WebDriverWait(driver, 5)
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='fa fa-home']")))
+    wait.until(ec.visibility_of_element_located((By.LINK_TEXT, "Account")))
+    wait.until(ec.visibility_of_element_located((By.LINK_TEXT, "Register")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='col-sm-9']/*[text()='Register Account']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='col-sm-9']/*[text()='If you already have an "
+                                                           "account with us, please login at the ']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='col-sm-9']//*[text()='login page']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@id='account']/*[text()='Your Personal Details']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@for='input-firstname'][text()='First Name']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@id='input-firstname']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@for='input-lastname'][text()='Last Name']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@id='input-lastname']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@for='input-email'][text()='E-Mail']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@id='input-email']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@for='input-telephone'][text()='Telephone']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@id='input-telephone']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@id='content']//*[text()='Your Password']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@for='input-password'][text()='Password']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@id='input-password']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@for='input-confirm'][text()='Password Confirm']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@id='input-confirm']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@id='content']//*[text()='Newsletter']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@id='content']//label[text()='Subscribe']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='radio-inline']/*[@value='1']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='radio-inline']/*[@value='0' and @checked='chec"
+                                                           "ked']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='pull-right'][text()='I have read and agree to "
+                                                           "the ']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='agree']/*[text()='Privacy Policy']")))
+    wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, "[type='checkbox'][name='agree']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='agree']/*[text()='Privacy Policy']")))
+    wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, "[type='checkbox'][name='agree']")))
+    wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, "[type='submit'][value='Continue']")))
+    wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, "[class='list-group-item']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Login']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Register']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Register']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Forgotten Password']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='My Account']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Address Book']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Wish List']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Order History']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Downloads']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Recurring payments']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Reward Points']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Returns']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Transactions']")))
+    wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@class='list-group-item'][text()='Newsletter']")))
